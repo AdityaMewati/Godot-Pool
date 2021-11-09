@@ -1,6 +1,6 @@
 extends Spatial
 
-enum Hole{
+enum {
 	HOLE_TOP
 	HOLE_BOT
 	HOLE_TOP_LEFT

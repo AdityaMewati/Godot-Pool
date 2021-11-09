@@ -23,7 +23,7 @@ func _process(delta):
 	if not Game.is_current_turn(): return
 	
 	match Game.mode:
-		Game.Mode.PICK_ANGLE:
+		Game.PICK_ANGLE:
 			var cue_pos = global_transform.origin
 			cue_pos = Util.to_vec2(cue_pos)
 			var cursor_pos = Game.world.cursor_pos
@@ -32,7 +32,7 @@ func _process(delta):
 			rotation.y = rot
 			calculate_ball_indicator()
 		
-		Game.Mode.PICK_POWER:
+		Game.PICK_POWER:
 			var cue_pos = global_transform.origin
 			cue_pos = Util.to_vec2(cue_pos)
 			var cursor_pos = Game.world.cursor_pos
@@ -106,7 +106,7 @@ func _new_mode(mode):
 			$PowerInfo.hide()
 
 func _new_stage(stage):
-	if stage == Game.Stage.PLAN:
+	if stage == Game.PLAN:
 		visible = true
 		calculate_ball_indicator()
 	else:

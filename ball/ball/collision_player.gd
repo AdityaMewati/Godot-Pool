@@ -1,6 +1,6 @@
 extends AudioStreamPlayer3D
 
-enum Sample{
+enum {
 	BALL_COLLISION
 	CUE_HIT
 }

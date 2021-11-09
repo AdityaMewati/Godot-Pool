@@ -17,7 +17,7 @@ func _input(event):
 	if event.is_action("roam"):
 		roam = !roam
 	
-	if Game.stage != Game.Stage.PLAN or not Game.is_current_turn(): return
+	if Game.stage != Game.PLAN or not Game.is_current_turn(): return
 	
 	if event.is_action("pick_yaw"):
 		Game.set_mode(Game.Mode.PICK_ANGLE)

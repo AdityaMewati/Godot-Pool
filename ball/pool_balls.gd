@@ -31,18 +31,18 @@ func shuffle():
 		shuffles -= 1
 
 func fix():
-	swap_balls(get_ball_idx(Game.ball_class.BALL_8), center)
+	swap_balls(get_ball_idx(Game.ball_class.Ball.BALL_8), center)
 	
 	var i = 0
 	for ball in slots:
-		if ball.type < Game.ball_class.BALL_8:
+		if ball.type < Game.ball_class.Ball.BALL_8:
 			swap_balls(i, corner1)
 			break
 		i += 1
 	
 	i = 0
 	for ball in slots:
-		if ball.type > Game.ball_class.BALL_8:
+		if ball.type > Game.ball_class.Ball.BALL_8:
 			swap_balls(i, corner2)
 			break
 		i += 1

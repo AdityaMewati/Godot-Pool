@@ -4,7 +4,7 @@ extends RigidBody
 const BALL_SIZE = 1.125
 const CIRCUMFERENCE = 2.0 * PI * BALL_SIZE
 
-const COLLISION_PLAYER = preload("collision_player.gd")
+onready var COLLISION_PLAYER = load("collision_player.gd")
 
 enum Ball{
 	CUE_BALL,
@@ -82,7 +82,7 @@ func cast(dir):
 		return {}
 
 func ball_in():
-	if type == CUE_BALL:
+	if type == Ball.CUE_BALL:
 		translation = Vector3(-24, 1.125, 0)
 		$BallSimulator.position = Vector2(-24, 0)
 	else:
@@ -102,6 +102,7 @@ func lock_plane():
 func set_type(new_type):
 	if type != new_type:
 		type = new_type
+		#$BallMesh.material_override.albedo_texture = get_texture()
 		$BallMesh.material_override.albedo_texture = get_texture()
 
 func get_texture(): # TODO Create a style class to automate this later

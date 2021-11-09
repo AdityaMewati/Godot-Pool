@@ -16,22 +16,22 @@ func set_screen(new_screen):
 
 
 
-enum Stage{
+enum {
 	PLAN, PLAY
 }
 signal new_stage(stage)
-var stage = Stage.PLAN setget set_stage
+var stage = PLAN setget set_stage
 func set_stage(new_stage):
 	stage = new_stage
 	emit_signal("new_stage", stage)
 
 
 
-enum Mode{
+enum {
 	PICK_ANGLE, PICK_POWER, PICK_IMPACT, NONE
 }
 signal new_mode(mode)
-var mode = Mode.NONE setget set_mode
+var mode = NONE setget set_mode
 func set_mode(new_mode):
 	mode = new_mode
 	emit_signal("new_mode", mode)
@@ -77,14 +77,15 @@ signal new_cue_style(style)
 var world = null
 
 func _ready():
+	print_debug(self.name)
 	new_player()
 	player_turn = get_child(0)
 
 func _process(delta):
-	if stage == Stage.PLAY:
+	if stage == PLAY:
 		if world.balls_are_still():
 			world.force_still()
-			set_stage(Stage.PLAN)
+			set_stage(PLAN)
 
 func game_in_progress():
 	return screen == Screen.GAME
@@ -108,4 +109,4 @@ func play_turn():
 	cue.hit()
 	world.get_cue_ball().hit(impulse)
 	
-	set_stage(Stage.PLAY)
+	set_stage(PLAY)

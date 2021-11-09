@@ -7,10 +7,7 @@ path="res://.import/table.dae-806c4ee75eb599a32253c236068af3d0.scn"
 [deps]
 
 source_file="res://table/table.dae"
-source_md5="a678d34dbb447498b3801d2448c41b9f"
-
 dest_files=[ "res://.import/table.dae-806c4ee75eb599a32253c236068af3d0.scn" ]
-dest_md5="b21e0ff488ae3e0d0e1850151a8d35bb"
 
 [params]
 
@@ -19,6 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=true
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
@@ -27,6 +25,7 @@ meshes/ensure_tangents=true
 meshes/storage=1
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=false
 animation/fps=15
